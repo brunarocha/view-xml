@@ -21,36 +21,15 @@ class ReadXmlController extends Controller
             $obj = new \stdClass;
             $obj = $row;
 
-            //$obj = $this->SimpleXML2Array($row);
-
             array_push($newList, $obj);
         }
-
-        //$array = $this->SimpleXML2Array($newList);
-
-        /*foreach($array as $key => $value){
-            //var_dump($key );
-            foreach(get_object_vars($value) as $val){
-                var_dump($val);
-            }
-
-
-            var_dump('<br>');
-        }*/
-
-        //dd($newList);
-
-        //dd($this->SimpleXML2Array($newList));
-        //dd(get_object_vars([0]));
 
         //dd($newList);
 
         return view('import.show')->with('items', $newList);
-
-        dd('FIM');
     }
 
-    public function SimpleXML2Array($xml){
+   /* public function SimpleXML2Array($xml){
         $array = $xml;
 
         //recursive Parser
@@ -69,7 +48,7 @@ class ReadXmlController extends Controller
         }
 
         return $array;
-    }
+    }*/
 
     /*public function SimpleXML2Array($xml){
         //$array = (array)$xml;

@@ -5,12 +5,27 @@
 
 <body>
 
-    @foreach($items as  $item)
-        @foreach($item as $val)
-        {{--<label>{!! get_object_vars($item) !!}</label>--}}
-        <label>{{$val}}</label>
-        @endforeach
+    @foreach($items as $key => $item)
+        @foreach($item as $key => $value)
+            <label>{{$key}}</label>
 
+            @if(count($value))
+                @foreach($value as $key => $val)
+                    <div>
+                        <label>
+                            <b>{{$key}}</b>: {{$val}}
+                        </label>
+                    </div>
+                @endforeach
+            @else
+                <div>
+                    <label>
+                        <b>{{$key}}</b>: {{$value}}
+                    </label>
+                </div>
+            @endif
+
+        @endforeach
     @endforeach
 
 </body>
