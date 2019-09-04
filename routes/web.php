@@ -18,3 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/import', 'ReadXmlController@create')->name('read.create');
+Route::post('/import', 'ReadXmlController@store')->name('read.store');
